@@ -34,7 +34,8 @@ export default function CoachCard({
           src={image}
           alt={name}
           fill
-          className="object-cover object-top opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+          className="object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+          style={{ objectPosition: "50% 20%" }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />

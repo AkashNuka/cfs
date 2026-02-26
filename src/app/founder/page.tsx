@@ -125,7 +125,7 @@ export default function FounderPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div {...fadeUp} className="space-y-5 text-[var(--color-muted)] leading-relaxed">
               <p>
-                Satish Bachala founded CFS9 Gym in 2008, starting his inspiring fitness
+                Satish Bachala founded CFS9 Gym in 2014, starting his inspiring fitness
                 journey in Hyderabad. He transformed his passion into a mission to help
                 people live healthier, more disciplined lives. With over a decade of
                 hands-on experience, Satish brings unmatched expertise to the fitness

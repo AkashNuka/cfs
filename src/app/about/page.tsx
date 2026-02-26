@@ -81,18 +81,18 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  CFS9 — Central Fitness Station — was born in 2014 from a simple belief:
-                  Hyderabad deserved a gym that treated fitness as a craft, not a commodity.
+                  CFS9 — Central Fitness Station — was founded on a simple belief:
+                  <span className="text-foreground font-medium"> Fitness should deliver results, not promises.</span>
                 </p>
                 <p>
-                  What started as a modest strength training facility in Kondapur has grown
-                  into two premium branches serving 500+ athletes across Hyderabad. Our
-                  coaches bring decades of combined experience in powerlifting, bodybuilding,
-                  CrossFit, sports nutrition, and functional training.
+                  We focus on structured training, scientific programming, and personalised
+                  guidance to help members transform their health, confidence, and lifestyle.
+                  What started in Kondapur in 2014 has grown into two premium branches
+                  serving 500+ members across Hyderabad.
                 </p>
                 <p>
-                  We don&apos;t do gimmicks. We don&apos;t do shortcuts. We build athletes — one rep,
-                  one set, one day at a time.
+                  Our premium facilities and expert trainers create an environment where
+                  fitness goals become achievable and sustainable.
                 </p>
               </div>
             </div>
@@ -105,6 +105,40 @@ export default function AboutPage() {
               <div className="absolute -bottom-4 -left-4 bg-accent text-white font-heading text-2xl font-bold px-6 py-3 rounded">
                 10+ YEARS
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-accent font-semibold tracking-[0.15em] uppercase text-sm mb-3">
+              What Drives Us
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase">
+              Vision &amp; <span className="text-accent">Mission</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-surface border border-white/5 rounded-xl p-8 hover:border-accent/30 transition-colors">
+              <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-5">
+                <Target className="w-7 h-7 text-accent" />
+              </div>
+              <h3 className="font-heading text-xl font-bold uppercase mb-3">Our Vision</h3>
+              <p className="text-muted leading-relaxed">
+                To become Hyderabad&apos;s most trusted and result-driven premium fitness brand.
+              </p>
+            </div>
+            <div className="bg-surface border border-white/5 rounded-xl p-8 hover:border-accent/30 transition-colors">
+              <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-5">
+                <Dumbbell className="w-7 h-7 text-accent" />
+              </div>
+              <h3 className="font-heading text-xl font-bold uppercase mb-3">Our Mission</h3>
+              <p className="text-muted leading-relaxed">
+                To empower individuals through disciplined training, expert coaching, and customised fitness programs that deliver real, long-term results.
+              </p>
             </div>
           </div>
         </div>

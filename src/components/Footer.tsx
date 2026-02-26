@@ -86,12 +86,12 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-muted">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span>Kondapur Main Road, Near Botanical Garden, Hyderabad 500084</span>
+                <span>Plot 42, Botanical Garden Road, Kondapur, Hyderabad 500084</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-primary transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919000190009" className="hover:text-primary transition-colors">
+                  +91 90001 90009
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -112,12 +112,12 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-muted">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span>Hi-Tech City Main Road, Near Cyber Towers, Madhapur 500081</span>
+                <span>Durgam Cheruvu Road, Near Inorbit Mall, Madhapur, Hyderabad 500081</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href="tel:+919876543211" className="hover:text-primary transition-colors">
-                  +91 98765 43211
+                <a href="tel:+919000290009" className="hover:text-primary transition-colors">
+                  +91 90002 90009
                 </a>
               </li>
               <li className="flex items-center gap-2">

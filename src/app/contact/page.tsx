@@ -29,9 +29,18 @@ export default function ContactPage() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold uppercase mb-4">
             Get In <span className="text-accent">Touch</span>
           </h1>
-          <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-6">
             Ready to start your transformation? Drop us a message or visit one of our branches.
           </p>
+          <a
+            href="https://wa.me/918886564999"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-sm tracking-widest rounded-lg transition-all duration-200 hover:scale-105"
+            style={{ fontFamily: "var(--font-oswald)" }}
+          >
+            💬 CHAT WITH US ON WHATSAPP
+          </a>
         </div>
       </section>
 

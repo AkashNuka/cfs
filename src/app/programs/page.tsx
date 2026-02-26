@@ -66,22 +66,50 @@ const programs = [
     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
     intensity: "All Levels" as const,
   },
+  {
+    title: "Gym Access",
+    description:
+      "Train in a premium, well-maintained environment equipped with modern fitness machines and free weights. Open to all fitness levels.",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    intensity: "All Levels" as const,
+  },
+  {
+    title: "Weight Loss Programs",
+    description:
+      "Scientifically structured fat-loss programs combining targeted workouts and nutrition guidance for measurable, sustainable results.",
+    image: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=80",
+    intensity: "All Levels" as const,
+  },
+  {
+    title: "Online Coaching",
+    description:
+      "Expert guidance from anywhere with customised workout plans, nutrition tracking, and weekly progress check-ins from our certified coaches.",
+    image: "https://images.unsplash.com/photo-1609899517237-354fba8d18c5?w=800&q=80",
+    intensity: "All Levels" as const,
+  },
+  {
+    title: "Nutrition Guidance",
+    description:
+      "Personalised nutrition strategies aligned with your fitness and lifestyle goals. Meal planning, macro tracking, and dietary coaching.",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
+    intensity: "All Levels" as const,
+  },
 ];
 
 export default function ProgramsPage() {
   return (
     <main>
       {/* Hero banner */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 min-h-[420px] flex items-center">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
-            alt=""
-            className="w-full h-full object-cover opacity-15"
+            src="/programs-hero.jpg"
+            alt="CFS9 training floor"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold uppercase mb-4">
             Our <span className="text-accent">Programs</span>
           </h1>

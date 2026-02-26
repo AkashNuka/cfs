@@ -7,7 +7,7 @@ const stats = [
   { end: 500, suffix: "+", label: "Active Members" },
   { end: 10, suffix: "+", label: "Years Experience" },
   { end: 2, suffix: "", label: "Branches" },
-  { end: 50, suffix: "+", label: "Transformations" },
+  { end: 200, suffix: "+", label: "Transformations" },
 ];
 
 export default function StatsSection() {

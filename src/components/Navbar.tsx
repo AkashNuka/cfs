@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Dumbbell } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -28,20 +29,21 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4">
       <nav className="max-w-7xl mx-auto bg-white/[0.06] backdrop-blur-2xl backdrop-saturate-150 rounded-2xl border border-white/[0.10] shadow-2xl shadow-black/30">
-        <div className="flex items-center justify-between h-16 px-5 sm:px-6">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <Dumbbell className="w-7 h-7 text-primary group-hover:rotate-12 transition-transform duration-300" />
-            <span
-              className="text-xl font-bold tracking-widest text-white"
-              style={{ fontFamily: "var(--font-oswald)" }}
-            >
-              CFS9
-            </span>
+        <div className="flex items-center h-16 px-5 sm:px-6">
+          {/* Logo — left */}
+          <Link href="/" className="flex items-center shrink-0 flex-1">
+            <Image
+              src="/cfs-logo-2048x1152.webp"
+              alt="CFS9 — Central Fitness Station"
+              width={120}
+              height={68}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
-          {/* Desktop Navigation — positioned after logo */}
-          <div className="hidden lg:flex items-center gap-7 ml-10">
+          {/* Desktop Navigation — center */}
+          <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -54,11 +56,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Spacer */}
-          <div className="hidden lg:block flex-1" />
-
           {/* Right side: JOIN NOW + Mobile Toggle */}
-          <div className="flex items-center gap-3 sm:gap-5">
+          <div className="flex items-center gap-3 sm:gap-5 flex-1 justify-end">
             <Link
               href="/contact"
               className="hidden sm:inline-flex items-center px-5 py-2 bg-primary hover:bg-primary-dark text-white text-[13px] font-bold tracking-[0.15em] rounded-lg transition-all duration-200 hover:scale-105"
@@ -70,6 +69,7 @@ export default function Navbar() {
               className="lg:hidden text-white p-1.5"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

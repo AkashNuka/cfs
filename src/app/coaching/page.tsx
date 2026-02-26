@@ -10,53 +10,52 @@ export const metadata: Metadata = {
 
 const coaches = [
   {
-    name: "Satish Bachala",
-    role: "Head Coach & Founder",
-    specialization: "Strength & Powerlifting",
-    experience: "12+ Years",
-    image: "https://images.unsplash.com/photo-1583500178450-e59f4edce10b?w=500&q=80",
-    bio: "National-level powerlifter and dedicated bodybuilder turned coach. Satish founded CFS9 with a mission to bring world-class strength training to Hyderabad. He's coached 200+ athletes to competition-level strength.",
-    isFounder: true,
+    name: "Akshay",
+    role: "Senior Fitness Trainer — Level 3",
+    specialization: "Strength & Conditioning",
+    experience: "7+ Years",
+    image: "/akshay.jpg",
+    bio: "ACE CPT certified and Nutrition & Exercise Correction Specialist. Akshay specialises in competition prep, chronic conditions, and high-performance functional training. His evidence-based programming pushes athletes to new peaks.",
   },
   {
-    name: "Priya Reddy",
-    role: "Lead CrossFit Trainer",
-    specialization: "CrossFit & HIIT",
-    experience: "8+ Years",
-    image: "https://images.unsplash.com/photo-1609899517237-354fba8d18c5?w=500&q=80",
-    bio: "CrossFit Level 2 certified and former state-level athlete. Priya specialises in metabolic conditioning and functional movements that build real-world athleticism.",
-  },
-  {
-    name: "Vikram Singh",
-    role: "Bodybuilding Coach",
-    specialization: "Physique & Contest Prep",
-    experience: "15+ Years",
-    image: "https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=500&q=80",
-    bio: "Multiple-time natural bodybuilding champion. Vikram's contest prep protocols and posing coaching have helped dozens of competitors earn their pro cards.",
-  },
-  {
-    name: "Anjali Nair",
-    role: "Nutrition & Wellness Coach",
-    specialization: "Sports Nutrition & Recovery",
-    experience: "6+ Years",
-    image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=500&q=80",
-    bio: "Certified sports nutritionist with an MS in Dietetics. Anjali builds custom meal plans aligned with training goals — from fat loss to performance optimisation.",
-  },
-  {
-    name: "Arjun Kapoor",
-    role: "Functional Training Coach",
-    specialization: "Athletic Performance",
+    name: "Vidya Yates",
+    role: "Senior Fitness Trainer — Level 3",
+    specialization: "Nutrition & Transformation",
     experience: "10+ Years",
-    image: "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500&q=80",
-    bio: "Former military fitness instructor. Arjun brings discipline, structure, and high-energy programming that pushes athletes beyond their perceived limits.",
+    image: "/vidya-yates.jpg",
+    bio: "INFS-certified Nutrition & Fitness Coach with over a decade of experience. Vidya specialises in weight management, PCOD, hypertension, and full-body transformation for clients of all fitness levels.",
   },
   {
-    name: "Meera Joshi",
-    role: "Yoga & Mobility Coach",
-    specialization: "Power Yoga & Recovery",
-    experience: "9+ Years",
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&q=80",
-    bio: "RYT-500 certified yoga instructor. Meera integrates mobility work with strength training to help athletes move better, recover faster, and train harder.",
+    name: "Mahesh Kumar",
+    role: "Fitness Trainer — Level 2",
+    specialization: "Functional Training",
+    experience: "4+ Years",
+    image: "https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=500&q=80",
+    bio: "BFY Certified Trainer and Nutrition Advisor. Mahesh focuses on functional training, injury rehab, and strength conditioning. He builds sustainable programs tailored to individual goals and special populations.",
+  },
+  {
+    name: "Mahender",
+    role: "Fitness Trainer — Level 2",
+    specialization: "Injury Rehab & Exercise Correction",
+    experience: "4+ Years",
+    image: "https://images.unsplash.com/photo-1609899517237-354fba8d18c5?w=500&q=80",
+    bio: "BFY Certified Trainer with expertise in exercise correction, special populations, and rehabilitation. Mahender brings structured programming for clients managing diabetics, thyroid, PCOD, and obesity.",
+  },
+  {
+    name: "Ajay",
+    role: "Fitness Trainer — Level 2",
+    specialization: "CrossFit & Sports Nutrition",
+    experience: "4+ Years",
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80",
+    bio: "BFY Certified Trainer skilled in CrossFit, sports nutrition, and workload management. Ajay works extensively with clients dealing with lower back issues, injury rehab, PCOD, and obesity for long-term results.",
+  },
+  {
+    name: "N. Surya Prakash",
+    role: "Fitness Trainer — Level 2",
+    specialization: "Nutrition & Kettlebell Training",
+    experience: "5+ Years",
+    image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80",
+    bio: "ProPower Fitness Academy certified trainer, Nutrition Advisor, and Kettlebell-EKFA specialist. Surya excels in competition prep, carbs manipulation, and rehab & mobility — with a strong focus on clients managing PCOD, diabetics, thyroid, and injury recovery.",
   },
 ];
 
@@ -88,13 +87,7 @@ export default function CoachingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {coaches.map((coach, index) => (
-              <div key={coach.name} className="flex flex-col relative">
-                {"isFounder" in coach && coach.isFounder && (
-                  <div className="absolute top-3 right-3 z-30 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg"
-                    style={{ fontFamily: "var(--font-oswald)" }}>
-                    ★ Founder
-                  </div>
-                )}
+              <div key={coach.name} className="flex flex-col">
                 <CoachCard {...coach} index={index} />
                 <p className="text-muted text-sm mt-4 leading-relaxed px-1">
                   {coach.bio}
