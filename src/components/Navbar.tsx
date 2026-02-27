@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4">
-      <nav className="max-w-7xl mx-auto bg-white/[0.04] backdrop-blur-3xl backdrop-saturate-[1.8] rounded-2xl border border-white/[0.12] shadow-2xl shadow-black/40 ring-1 ring-white/[0.05]">
+      <nav className="max-w-7xl mx-auto bg-black/30 backdrop-blur-[28px] backdrop-saturate-[1.6] rounded-2xl border border-white/[0.15] shadow-2xl shadow-black/50 ring-1 ring-white/[0.08]">
         <div className="flex items-center h-12 px-5 sm:px-6">
           {/* Logo — left */}
           <Link href="/" className="flex items-center shrink-0 flex-1">
@@ -85,7 +85,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden mt-2 mx-auto max-w-7xl bg-white/[0.06] backdrop-blur-2xl backdrop-saturate-150 rounded-2xl border border-white/[0.10] shadow-2xl shadow-black/30 overflow-hidden"
+            className="lg:hidden mt-2 mx-auto max-w-7xl bg-black/40 backdrop-blur-[28px] backdrop-saturate-[1.6] rounded-2xl border border-white/[0.15] shadow-2xl shadow-black/50 overflow-hidden"
           >
             <div className="px-6 py-5 space-y-3">
               {allLinks.map((link) => (
