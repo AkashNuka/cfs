@@ -29,13 +29,13 @@ export default function CoachCard({
       className="group relative overflow-hidden rounded-lg bg-surface border border-border hover:border-primary/40 transition-all duration-300"
     >
       {/* Image */}
-      <div className="relative h-80 overflow-hidden">
+      <div className="relative h-96 overflow-hidden bg-zinc-900">
         <Image
           src={image}
           alt={name}
           fill
           className="object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
-          style={{ objectPosition: "50% 5%" }}
+          style={{ objectPosition: "50% 30%" }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />

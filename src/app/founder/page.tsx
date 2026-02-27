@@ -44,9 +44,10 @@ export default function FounderPage() {
             alt="Satish Bachala"
             fill
             priority
-            className="object-cover object-top opacity-20"
+            className="object-cover object-[center_7%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[var(--color-background)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

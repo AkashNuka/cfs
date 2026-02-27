@@ -10,12 +10,12 @@ export default function HeroSection() {
       <img
         src="/barbell.png"
         alt="CFS9 — Premium Gym Interior"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
       />
 
       {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/50 to-black/85 z-10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 z-10" />
 
       {/* Content */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 text-center">

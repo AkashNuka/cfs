@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -118,6 +118,35 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <a href="tel:+919000290009" className="hover:text-primary transition-colors">
                   +91 90002 90009
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <a href="mailto:info@cfs9gym.com" className="hover:text-primary transition-colors">
+                  info@cfs9gym.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Jubilee Hills Branch */}
+          <div>
+            <h3
+              className="text-white text-lg font-bold tracking-wider mb-6"
+              style={{ fontFamily: "var(--font-oswald)" }}
+            >
+              JUBILEE HILLS
+              <span className="ml-2 text-xs text-primary font-normal tracking-normal">Coming Soon</span>
+            </h3>
+            <ul className="space-y-3 text-sm text-muted">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span>Jubilee Hills, Hyderabad</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary shrink-0" />
+                <a href="tel:+918886564999" className="hover:text-primary transition-colors">
+                  +91 88865 64999
                 </a>
               </li>
               <li className="flex items-center gap-2">

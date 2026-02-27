@@ -16,20 +16,26 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=80"
-            alt=""
-            className="w-full h-full object-cover opacity-15"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-background" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold uppercase mb-4">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=80"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-[center_7%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+          <p
+            className="text-sm sm:text-base tracking-[0.3em] uppercase text-primary font-medium mb-5"
+            style={{ fontFamily: "var(--font-oswald)" }}
+          >
+            We&apos;re Here For You
+          </p>
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold uppercase mb-4 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
             Get In <span className="text-accent">Touch</span>
           </h1>
-          <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          <div className="mx-auto w-28 h-1 bg-primary rounded-full mb-6" />
+          <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
             Ready to start your transformation? Drop us a message or visit one of our branches.
           </p>
           <a
