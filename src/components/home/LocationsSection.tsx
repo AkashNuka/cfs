@@ -11,6 +11,7 @@ const locations = [
     phone: "+91 90002 90009",
     hours: "5:00 AM – 11:00 PM",
     comingSoon: false,
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&q=85&fit=crop",
   },
   {
     name: "CFS9 Kondapur",
@@ -18,6 +19,7 @@ const locations = [
     phone: "+91 90001 90009",
     hours: "5:00 AM – 11:00 PM",
     comingSoon: false,
+    image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&h=600&q=85&fit=crop",
   },
   {
     name: "CFS9 Jubilee Hills",
@@ -25,6 +27,7 @@ const locations = [
     phone: null,
     hours: null,
     comingSoon: true,
+    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&q=85&fit=crop",
   },
 ];
 
@@ -73,62 +76,63 @@ export default function LocationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className={`relative rounded-2xl border p-8 flex flex-col gap-5 transition-all duration-300 ${
+              className={`relative rounded-2xl border overflow-hidden flex flex-col transition-all duration-300 ${
                 loc.comingSoon
                   ? "border-white/15 bg-white/3 opacity-75"
                   : "border-white/10 bg-white/4 hover:border-primary/40 hover:bg-primary/5"
               }`}
             >
-              {loc.comingSoon && (
-                <span className="absolute top-4 right-4 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30">
-                  Coming Soon
-                </span>
-              )}
-
-              <div>
-                <h3
-                  className="text-xl font-bold text-white mb-1"
-                  style={{ fontFamily: "var(--font-oswald)" }}
-                >
-                  {loc.name}
-                </h3>
+              {/* Card image */}
+              <div className="relative w-full h-48 overflow-hidden">
+                <img
+                  src={loc.image}
+                  alt={loc.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                {loc.comingSoon && (
+                  <span className="absolute top-4 right-4 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 backdrop-blur-sm">
+                    Coming Soon
+                  </span>
+                )}
               </div>
 
-              <div className="space-y-3 flex-1">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <p className="text-muted text-sm leading-relaxed">{loc.address}</p>
+              <div className="p-8 flex flex-col gap-5 flex-1">
+                <div>
+                  <h3
+                    className="text-xl font-bold text-white mb-1"
+                    style={{ fontFamily: "var(--font-oswald)" }}
+                  >
+                    {loc.name}
+                  </h3>
                 </div>
 
-                {loc.hours && (
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-4 h-4 text-primary shrink-0" />
-                    <p className="text-muted text-sm">{loc.hours}</p>
+                <div className="space-y-3 flex-1">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <p className="text-muted text-sm leading-relaxed">{loc.address}</p>
                   </div>
-                )}
 
-                {loc.phone && (
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-primary shrink-0" />
-                    <a
-                      href={`tel:${loc.phone.replace(/\s/g, "")}`}
-                      className="text-muted text-sm hover:text-white transition-colors"
-                    >
-                      {loc.phone}
-                    </a>
-                  </div>
-                )}
+                  {loc.hours && (
+                    <div className="flex items-center gap-3">
+                      <Clock className="w-4 h-4 text-primary shrink-0" />
+                      <p className="text-muted text-sm">{loc.hours}</p>
+                    </div>
+                  )}
 
-                {loc.comingSoon && (
-                  <a
-                    href="https://wa.me/918886564999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-3 text-primary text-sm font-semibold hover:underline"
-                  >
-                    Get Notified <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                  {loc.phone && (
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-primary shrink-0" />
+                      <a
+                        href={`tel:${loc.phone.replace(/\s/g, "")}`}
+                        className="text-muted text-sm hover:text-white transition-colors"
+                      >
+                        {loc.phone}
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

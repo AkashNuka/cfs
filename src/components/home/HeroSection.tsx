@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/Button";
-import { ChevronDown, Dumbbell, Users, MapPin, Trophy } from "lucide-react";
+import { ChevronDown, Dumbbell } from "lucide-react";
 
 /* ── Real gym photos that auto-rotate ── */
 const HERO_SLIDES = [
@@ -14,57 +14,7 @@ const HERO_SLIDES = [
   { src: "/@12340630a-Edit.jpg",    top: "BUILD YOUR",   bottom: "LEGACY" },
 ];
 
-/* ── Animated counting number ── */
-function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
 
-  useEffect(() => {
-    const t = setTimeout(() => setStarted(true), 1800);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    if (!started) return;
-    const steps = 60;
-    const inc = target / steps;
-    let cur = 0;
-    const id = setInterval(() => {
-      cur += inc;
-      if (cur >= target) { setCount(target); clearInterval(id); }
-      else setCount(Math.floor(cur));
-    }, 2000 / steps);
-    return () => clearInterval(id);
-  }, [started, target]);
-
-  return <span>{started ? count.toLocaleString() : "0"}{suffix}</span>;
-}
-
-/* ── Single stat block ── */
-function GymStat({
-  icon: Icon, value, suffix, label, delay,
-}: {
-  icon: React.ElementType; value: number; suffix: string; label: string; delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/[0.06] hover:border-primary/40 transition-all duration-300 group"
-    >
-      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-        <Icon className="w-5 h-5 text-primary" />
-      </div>
-      <div>
-        <div className="text-xl font-bold text-white" style={{ fontFamily: "var(--font-oswald)" }}>
-          <CountUp target={value} suffix={suffix} />
-        </div>
-        <div className="text-[10px] uppercase tracking-[0.2em] text-muted">{label}</div>
-      </div>
-    </motion.div>
-  );
-}
 
 /* ═══════════════════════════════════════════════════════
    HERO SECTION
@@ -117,7 +67,7 @@ export default function HeroSection() {
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-[100px] z-[3] animate-float" style={{ animationDelay: "2s" }} />
 
       {/* ── Content ── */}
-      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 w-full pt-28">
+      <div className="relative z-30 max-w-6xl mx-auto px-4 sm:px-6 w-full pt-28 pb-36">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
 
           {/* Badge */}
@@ -200,14 +150,6 @@ export default function HeroSection() {
               View Programs
             </Button>
           </motion.div>
-
-          {/* Gym stats */}
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <GymStat icon={Users}    value={10000} suffix="+" label="Members"  delay={1.4} />
-            <GymStat icon={Dumbbell} value={50}    suffix="+" label="Trainers" delay={1.5} />
-            <GymStat icon={MapPin}   value={5}     suffix=""  label="Branches" delay={1.6} />
-            <GymStat icon={Trophy}   value={15}    suffix="+" label="Years"    delay={1.7} />
-          </div>
         </div>
       </div>
 

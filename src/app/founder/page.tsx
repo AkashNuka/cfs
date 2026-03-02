@@ -37,22 +37,29 @@ export default function FounderPage() {
   return (
     <main>
       {/* === Hero === */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-[82vh] overflow-hidden pt-32 md:pt-36">
+        {/* Full-screen background image */}
+        <div className="absolute inset-x-0 bottom-0 top-16 md:top-20 bg-black">
           <Image
-            src="https://images.unsplash.com/photo-1583500178450-e59f4edce10b?w=1920&q=80"
-            alt="Satish Bachala"
+            src="/founderbg2.jpg"
+            alt="Satish Bachala — Founder of CFS9"
             fill
             priority
-            className="object-cover object-[center_7%]"
+            className="object-contain object-left-bottom brightness-110"
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+          {/* Gradient fade from image into text area */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/8 to-[var(--color-background)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-black/20" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fadeUp}>
+        {/* Text content pinned to bottom-right */}
+        <div className="relative z-10 flex flex-col justify-end items-end min-h-[calc(82vh-6rem)] pb-8 md:pb-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-end lg:pr-8 xl:pr-16">
+            <motion.div
+              {...fadeUp}
+              className="text-right max-w-xl bg-black/25 backdrop-blur-[2px] rounded-2xl p-6 md:p-8"
+            >
               <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-4">
                 Entrepreneur | Fitness Coach | Celebrity Trainer
               </p>
@@ -63,44 +70,16 @@ export default function FounderPage() {
                 Satish{" "}
                 <span className="text-primary">Bachala</span>
               </h1>
-              <p className="mt-6 text-[var(--color-muted)] text-lg leading-relaxed max-w-xl">
+              <p className="mt-6 text-white/70 text-lg leading-relaxed ml-auto max-w-xl">
                 Meet the Visionary Behind CFS
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-4 justify-end">
                 <Button href="/contact" size="lg" arrow>
                   Train With Satish
                 </Button>
                 <Button href="/coaching" variant="outline" size="lg">
                   Meet the Team
                 </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative h-[500px] rounded-2xl overflow-hidden border border-white/10"
-            >
-              <Image
-                src="/owner.jpg"
-                alt="Satish Bachala — Founder of CFS9"
-                fill
-                priority
-                className="object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <p
-                  className="text-white text-xl font-bold tracking-wider uppercase"
-                  style={{ fontFamily: "var(--font-oswald)" }}
-                >
-                  Satish Bachala
-                </p>
-                <p className="text-primary text-sm font-semibold mt-1">
-                  Fitness Entrepreneur | Celebrity Trainer | Founder of CFS9
-                </p>
               </div>
             </motion.div>
           </div>
@@ -414,7 +393,7 @@ export default function FounderPage() {
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1534368786749-b63e05c92717?w=1920&q=80"
+            src="/bg.jpg"
             alt=""
             fill
             className="object-cover opacity-10"
