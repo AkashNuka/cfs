@@ -1,13 +1,8 @@
-import { Metadata } from "next";
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
 import ProgramCard from "@/components/ProgramCard";
 import Button from "@/components/Button";
-
-export const metadata: Metadata = {
-  title: "Programs | CFS9 — Central Fitness Station",
-  description:
-    "Explore CFS9's training programs: Strength Training, Bodybuilding, CrossFit, Cardio & HIIT, Functional Training, Yoga and more in Hyderabad.",
-};
 
 const programs = [
   {
@@ -119,15 +114,31 @@ export default function ProgramsPage() {
             Our <span className="text-accent">Programs</span>
           </h1>
           <div className="mx-auto w-28 h-1 bg-primary rounded-full mb-6" />
-          <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            From raw strength to mindful movement — we have a program for every goal.
-          </p>
         </div>
       </section>
 
       {/* Programs Grid */}
-      <section className="py-20 md:py-28">
+      <section className="pt-0 pb-20 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Intro Section */}
+          <div className="text-center mb-16 mt-10">
+            <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-4" style={{ fontFamily: "var(--font-oswald)" }}>
+              Explore Our Programs
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6" style={{ fontFamily: "var(--font-oswald)" }}>
+              Diverse. <span className="text-primary">Effective.</span> Results-Driven.
+            </h2>
+            <button 
+              onClick={() => document.querySelector('main')?.children[2]?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-3 inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              aria-label="Scroll down"
+            >
+              <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {programs.map((program) => (
               <ProgramCard key={program.title} {...program} href="/contact" />

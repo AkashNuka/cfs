@@ -10,6 +10,7 @@ interface CoachCardProps {
   experience: string;
   image: string;
   index: number;
+  rotateImage?: boolean;
 }
 
 export default function CoachCard({
@@ -19,6 +20,7 @@ export default function CoachCard({
   experience,
   image,
   index,
+  rotateImage = false,
 }: CoachCardProps) {
   return (
     <motion.div
@@ -35,7 +37,7 @@ export default function CoachCard({
           alt={name}
           fill
           className="object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
-          style={{ objectPosition: "50% 30%" }}
+          style={{ objectPosition: "50% 30%", transform: rotateImage ? "rotate(90deg)" : "rotate(0deg)" }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />

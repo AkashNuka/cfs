@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Metadata } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -57,9 +56,15 @@ export default function GalleryPage() {
             <span className="text-accent">Gallery</span>
           </h1>
           <div className="mx-auto w-28 h-1 bg-primary rounded-full mb-6" />
-          <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            A glimpse inside CFS9 — where iron meets ambition.
-          </p>
+          <button 
+            onClick={() => document.querySelector('main')?.children[1]?.scrollIntoView({ behavior: 'smooth' })}
+            className="mt-6 inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            aria-label="Scroll down"
+          >
+            <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
         </div>
       </section>
 

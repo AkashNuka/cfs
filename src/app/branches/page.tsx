@@ -1,11 +1,6 @@
-import { Metadata } from "next";
-import BranchCard from "@/components/BranchCard";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Branches | CFS9 — Central Fitness Station",
-  description:
-    "Visit CFS9's premium gym locations in Kondapur and Madhapur, Hyderabad. World-class equipment, elite coaching, flexible timings.",
-};
+import BranchCard from "@/components/BranchCard";
 
 const branches = [
   {
@@ -77,15 +72,31 @@ export default function BranchesPage() {
             Our <span className="text-accent">Branches</span>
           </h1>
           <div className="mx-auto w-28 h-1 bg-primary rounded-full mb-6" />
-          <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Two premium locations in Hyderabad — built for serious training.
-          </p>
         </div>
       </section>
 
       {/* Branches */}
-      <section className="py-20 md:py-28">
+      <section className="pt-0 pb-20 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+          {/* Intro Section */}
+          <div className="text-center mb-16 mt-10">
+            <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-4" style={{ fontFamily: "var(--font-oswald)" }}>
+              Visit Our Locations
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6" style={{ fontFamily: "var(--font-oswald)" }}>
+              Modern. <span className="text-primary">Equipped.</span> Welcoming.
+            </h2>
+            <button 
+              onClick={() => document.querySelector('main')?.children[2]?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-3 inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              aria-label="Scroll down"
+            >
+              <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+          </div>
+
           {branches.map((branch, index) =>
             branch.comingSoon ? (
               <div key={branch.name} className="relative rounded-xl overflow-hidden border border-accent/20">

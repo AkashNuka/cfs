@@ -1,12 +1,7 @@
-import { Metadata } from "next";
+"use client";
+
 import CoachCard from "@/components/CoachCard";
 import Button from "@/components/Button";
-
-export const metadata: Metadata = {
-  title: "Coaching | CFS9 — Central Fitness Station",
-  description:
-    "Meet CFS9's elite coaching team. Certified professionals with decades of combined experience in strength, bodybuilding, CrossFit, nutrition and more.",
-};
 
 const coaches = [
   {
@@ -16,6 +11,7 @@ const coaches = [
     experience: "7+ Years",
     image: "/akshay.jpg",
     bio: "ACE CPT certified and Nutrition & Exercise Correction Specialist. Akshay specialises in competition prep, chronic conditions, and high-performance functional training. His evidence-based programming pushes athletes to new peaks.",
+    rotateImage: true,
   },
   {
     name: "Vidya Yates",
@@ -24,6 +20,7 @@ const coaches = [
     experience: "10+ Years",
     image: "/vidya-yates.jpg",
     bio: "INFS-certified Nutrition & Fitness Coach with over a decade of experience. Vidya specialises in weight management, PCOD, hypertension, and full-body transformation for clients of all fitness levels.",
+    rotateImage: true,
   },
   {
     name: "Mahesh Kumar",
@@ -94,9 +91,31 @@ export default function CoachingPage() {
       </section>
 
       {/* Coach Grid */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-20 md:py-28 relative -mt-20">
+        {/* Fade continuation from hero */}
+        <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/40 via-black/20 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Intro Section */}
+          <div className="text-center mb-16">
+            <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-4" style={{ fontFamily: "var(--font-oswald)" }}>
+              Meet Your Team
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6" style={{ fontFamily: "var(--font-oswald)" }}>
+              Certified. <span className="text-primary">Experienced.</span> Dedicated.
+            </h2>
+            <button 
+              onClick={() => document.getElementById('coaches-grid')?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-6 inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              aria-label="Scroll to coaches"
+            >
+              <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="coaches-grid">
             {coaches.map((coach, index) => (
               <div key={coach.name} className="flex flex-col">
                 <CoachCard {...coach} index={index} />
