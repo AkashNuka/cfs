@@ -84,7 +84,7 @@ export default function FounderPage() {
               className="relative h-[500px] rounded-2xl overflow-hidden border border-white/10"
             >
               <Image
-                src="https://images.unsplash.com/photo-1583500178450-e59f4edce10b?w=800&q=80"
+                src="/owner.jpg"
                 alt="Satish Bachala — Founder of CFS9"
                 fill
                 priority
@@ -154,7 +154,7 @@ export default function FounderPage() {
               className="relative h-[450px] rounded-2xl overflow-hidden border border-white/10"
             >
               <Image
-                src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a?w=800&q=80"
+                src="/owner1.jpg"
                 alt="Satish Bachala — training session"
                 fill
                 className="object-cover"
@@ -187,7 +187,7 @@ export default function FounderPage() {
               className="relative h-[450px] rounded-2xl overflow-hidden border border-white/10"
             >
               <Image
-                src="https://images.unsplash.com/photo-1534368786749-b63e05c92717?w=800&q=80"
+                src="/owner2.jpg"
                 alt="CFS9 luxury gym interior"
                 fill
                 className="object-cover"
@@ -311,7 +311,7 @@ export default function FounderPage() {
               className="relative h-[400px] rounded-2xl overflow-hidden border border-white/10"
             >
               <Image
-                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80"
+                src="/owner3.jpg"
                 alt="Satish Bachala — coaching athletes"
                 fill
                 className="object-cover"

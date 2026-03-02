@@ -11,7 +11,7 @@ const HERO_SLIDES = [
   { src: "/barbell.png",            top: "FORGE YOUR",   bottom: "STRENGTH" },
   { src: "/@12340691a-Edit.jpg",    top: "TRAIN LIKE A", bottom: "CHAMPION" },
   { src: "/@12340679a-Edit.jpg",    top: "UNLEASH YOUR", bottom: "POWER" },
-  { src: "/@12340762a-Edit.jpg",    top: "BUILD YOUR",   bottom: "LEGACY" },
+  { src: "/@12340630a-Edit.jpg",    top: "BUILD YOUR",   bottom: "LEGACY" },
 ];
 
 /* ── Animated counting number ── */
@@ -98,7 +98,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, scale: 1.0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full object-cover object-[60%_55%]"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_40%]"
         />
       </AnimatePresence>
 

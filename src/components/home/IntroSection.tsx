@@ -4,8 +4,20 @@ import { motion } from "framer-motion";
 
 export default function IntroSection() {
   return (
-    <section className="py-24 md:py-32 bg-background" id="about">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-background" id="about">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0" style={{
+        backgroundImage: "url('/gym-illustration.svg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}>
+        {/* Dark overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

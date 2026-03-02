@@ -1,0 +1,123 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Floor -->
+  <rect x="0" y="600" width="1200" height="200" fill="#0f0f0f"/>
+  <line x1="0" y1="600" x2="1200" y2="600" stroke="#404040" stroke-width="2"/>
+  
+  <!-- Floor tiles pattern -->
+  <g opacity="0.3">
+    <rect x="0" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="100" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="200" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="300" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="400" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="500" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="600" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="700" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="800" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="900" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="1000" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <rect x="1100" y="600" width="100" height="100" fill="none" stroke="#dc2626" stroke-width="1"/>
+  </g>
+  
+  <!-- Dumbbells Left -->
+  <g>
+    <!-- Left dumbbell -->
+    <rect x="80" y="480" width="20" height="120" fill="#404040" rx="10"/>
+    <circle cx="90" cy="470" r="35" fill="#dc2626"/>
+    <circle cx="90" cy="610" r="35" fill="#dc2626"/>
+    <text x="90" y="480" font-size="24" font-weight="bold" text-anchor="middle" fill="#fff" opacity="0.8">50</text>
+  </g>
+  
+  <!-- Barbell in center -->
+  <g>
+    <rect x="550" y="450" width="100" height="30" fill="#808080" rx="15"/>
+    <!-- Left plate -->
+    <ellipse cx="520" cy="465" rx="45" ry="35" fill="#dc2626"/>
+    <ellipse cx="520" cy="465" rx="40" ry="30" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    <!-- Right plate -->
+    <ellipse cx="680" cy="465" rx="45" ry="35" fill="#dc2626"/>
+    <ellipse cx="680" cy="465" rx="40" ry="30" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+  </g>
+  
+  <!-- Dumbbells Right -->
+  <g>
+    <!-- Right dumbbell -->
+    <rect x="1100" y="480" width="20" height="120" fill="#404040" rx="10"/>
+    <circle cx="1110" cy="470" r="35" fill="#dc2626"/>
+    <circle cx="1110" cy="610" r="35" fill="#dc2626"/>
+    <text x="1110" y="480" font-size="24" font-weight="bold" text-anchor="middle" fill="#fff" opacity="0.8">50</text>
+  </g>
+  
+  <!-- Treadmill -->
+  <g>
+    <rect x="200" y="350" width="180" height="250" fill="#1f1f1f" stroke="#404040" stroke-width="2" rx="10"/>
+    <rect x="210" y="360" width="160" height="120" fill="#0f0f0f" rx="5"/>
+    <!-- Screen -->
+    <rect x="215" y="365" width="150" height="110" fill="#1a1a1a" stroke="#dc2626" stroke-width="2" rx="3"/>
+    <text x="290" y="420" font-size="20" font-weight="bold" text-anchor="middle" fill="#dc2626">5:45</text>
+    <!-- Treadmill belt -->
+    <rect x="210" y="485" width="160" height="60" fill="#0a0a0a" rx="5"/>
+    <line x1="210" y1="500" x2="370" y2="500" stroke="#404040" stroke-width="1"/>
+    <line x1="210" y1="515" x2="370" y2="515" stroke="#404040" stroke-width="1"/>
+    <line x1="210" y1="530" x2="370" y2="530" stroke="#404040" stroke-width="1"/>
+  </g>
+  
+  <!-- Weight Rack -->
+  <g>
+    <!-- Rack frame -->
+    <rect x="900" y="300" width="200" height="350" fill="none" stroke="#404040" stroke-width="3" rx="5"/>
+    <!-- Shelves -->
+    <line x1="900" y1="350" x2="1100" y2="350" stroke="#404040" stroke-width="2"/>
+    <line x1="900" y1="400" x2="1100" y2="400" stroke="#404040" stroke-width="2"/>
+    <line x1="900" y1="450" x2="1100" y2="450" stroke="#404040" stroke-width="2"/>
+    <line x1="900" y1="500" x2="1100" y2="500" stroke="#404040" stroke-width="2"/>
+    <line x1="900" y1="550" x2="1100" y2="550" stroke="#404040" stroke-width="2"/>
+    <!-- Dumbbells on rack -->
+    <circle cx="930" cy="330" r="15" fill="#dc2626"/>
+    <circle cx="970" cy="330" r="15" fill="#dc2626"/>
+    <circle cx="1010" cy="330" r="15" fill="#dc2626"/>
+    <circle cx="1050" cy="330" r="15" fill="#dc2626"/>
+    <circle cx="1070" cy="330" r="15" fill="#dc2626"/>
+    
+    <circle cx="930" cy="380" r="15" fill="#ffa500"/>
+    <circle cx="970" cy="380" r="15" fill="#ffa500"/>
+    <circle cx="1010" cy="380" r="15" fill="#ffa500"/>
+    <circle cx="1050" cy="380" r="15" fill="#ffa500"/>
+    
+    <circle cx="930" cy="430" r="15" fill="#4169e1"/>
+    <circle cx="970" cy="430" r="15" fill="#4169e1"/>
+    <circle cx="1010" cy="430" r="15" fill="#4169e1"/>
+  </g>
+  
+  <!-- Bench Press -->
+  <g>
+    <!-- Bench -->
+    <ellipse cx="450" cy="520" rx="80" ry="30" fill="#1f1f1f" stroke="#404040" stroke-width="2"/>
+    <!-- Back support -->
+    <rect x="400" y="460" width="100" height="70" fill="#1f1f1f" stroke="#404040" stroke-width="2" rx="5"/>
+    <!-- Weight plates -->
+    <ellipse cx="350" cy="470" rx="30" ry="25" fill="#dc2626"/>
+    <ellipse cx="550" cy="470" rx="30" ry="25" fill="#dc2626"/>
+  </g>
+  
+  <!-- Accent lighting -->
+  <circle cx="600" cy="200" r="200" fill="#dc2626" opacity="0.05" blur="40px"/>
+  
+  <!-- Text overlay -->
+  <text x="600" y="100" font-size="48" font-weight="bold" text-anchor="middle" fill="#fff" font-family="Oswald">PREMIUM FITNESS</text>
+  <text x="600" y="150" font-size="32" font-weight="bold" text-anchor="middle" fill="#dc2626" font-family="Oswald">EQUIPMENT & TRAINING</text>
+</svg>
