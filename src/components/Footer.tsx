@@ -166,6 +166,9 @@ export default function Footer() {
           <p className="text-muted text-xs">
             © {new Date().getFullYear()} CFS9 — Central Fitness Station. All rights reserved.
           </p>
+          <p className="text-muted text-xs">
+            Website by <span className="text-primary">ProxyMedia</span>
+          </p>
           <div className="flex gap-6 text-xs text-muted">
             <Link href="/contact" className="hover:text-primary transition-colors">
               Privacy Policy

@@ -72,14 +72,14 @@ const programs = [
     title: "Weight Loss Programs",
     description:
       "Scientifically structured fat-loss programs combining targeted workouts and nutrition guidance for measurable, sustainable results.",
-    image: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
     intensity: "All Levels" as const,
   },
   {
     title: "Online Coaching",
     description:
       "Expert guidance from anywhere with customised workout plans, nutrition tracking, and weekly progress check-ins from our certified coaches.",
-    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
     intensity: "All Levels" as const,
   },
   {

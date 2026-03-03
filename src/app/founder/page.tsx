@@ -74,7 +74,7 @@ export default function FounderPage() {
                 Meet the Visionary Behind CFS
               </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-end">
-                <Button href="/contact" size="lg" arrow>
+                <Button href="https://wa.me/918886564999?text=Hi%2C%20I%20need%20training%20with%20Satish." size="lg" arrow>
                   Train With Satish
                 </Button>
                 <Button href="/coaching" variant="outline" size="lg">
