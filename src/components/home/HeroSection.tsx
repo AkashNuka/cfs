@@ -7,11 +7,11 @@ import { ChevronDown, Dumbbell } from "lucide-react";
 
 /* ── Real gym photos that auto-rotate ── */
 const HERO_SLIDES = [
-  { src: "/hero-bg.jpg",            top: "PUSH YOUR",    bottom: "LIMITS" },
+  { src: "/owner-5-Optimized.jpg",            top: "PUSH YOUR",    bottom: "LIMITS" },
   { src: "/barbell.png",            top: "FORGE YOUR",   bottom: "STRENGTH" },
   { src: "/@12340691a-Edit.jpg",    top: "TRAIN LIKE A", bottom: "CHAMPION" },
   { src: "/@12340679a-Edit.jpg",    top: "UNLEASH YOUR", bottom: "POWER" },
-  { src: "/@12340630a-Edit.jpg",    top: "BUILD YOUR",   bottom: "LEGACY" },
+  { src: "/@12340627a-Edit-Optimized.jpg", top: "BUILD YOUR",   bottom: "LEGACY" },
 ];
 
 
@@ -21,6 +21,7 @@ const HERO_SLIDES = [
    ═══════════════════════════════════════════════════════ */
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const isLegacySlide = current === 4;
 
   const next = useCallback(() => {
     setCurrent((p) => (p + 1) % HERO_SLIDES.length);
@@ -44,11 +45,13 @@ export default function HeroSection() {
           aria-hidden="true"
           loading="eager"
           decoding="async"
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1.0 }}
+          initial={{ opacity: 0, scale: 1.08, scaleX: isLegacySlide ? -1 : 1 }}
+          animate={{ opacity: 1, scale: 1.0, scaleX: isLegacySlide ? -1 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full object-cover object-[60%_40%]"
+          className={`absolute inset-0 w-full h-full object-cover ${
+            isLegacySlide ? "object-[50%_10%]" : "object-[60%_40%]"
+          }`}
         />
       </AnimatePresence>
 
