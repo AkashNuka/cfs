@@ -12,7 +12,7 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://instagram.com/cfs9gym", icon: Instagram, label: "Instagram" },
+  { href: "https://www.instagram.com/cfs9_gym_madhapur/", icon: Instagram, label: "Instagram" },
   { href: "https://facebook.com/cfs9gym", icon: Facebook, label: "Facebook" },
   { href: "https://youtube.com/@cfs9gym", icon: Youtube, label: "YouTube" },
 ];

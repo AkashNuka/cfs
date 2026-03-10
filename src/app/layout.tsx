@@ -99,7 +99,7 @@ export default function RootLayout({
               priceRange: "$$",
               image: "/og-image.jpg",
               sameAs: [
-                "https://instagram.com/cfs9gym",
+                "https://www.instagram.com/cfs9_gym_madhapur/",
                 "https://facebook.com/cfs9gym",
                 "https://youtube.com/@cfs9gym",
               ],
