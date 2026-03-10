@@ -2,26 +2,62 @@
 
 import { useState, FormEvent } from "react";
 import { MapPin, Phone, Clock, Mail, Send } from "lucide-react";
-import { motion } from "framer-motion";
+
+type BranchKey = "kondapur" | "madhapur";
+
+const branchWhatsAppNumbers: Record<BranchKey, string> = {
+  kondapur: "918886564999",
+  madhapur: "919052288888",
+};
+
+const branchLabels: Record<BranchKey, string> = {
+  kondapur: "CFS9 Kondapur",
+  madhapur: "CFS9 Madhapur",
+};
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [whatsappBranch, setWhatsappBranch] = useState<"kondapur" | "madhapur" | "">("");
+  const [whatsappBranch, setWhatsappBranch] = useState<BranchKey | "">("");
 
-  const whatsappNumber = "918886564999";
+  const redirectToWhatsApp = (branch: BranchKey, message: string) => {
+    const phoneNumber = branchWhatsAppNumbers[branch];
+    const encodedMessage = encodeURIComponent(message);
+
+    window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In production, connect to a backend/email service
-    setSubmitted(true);
+
+    const formData = new FormData(e.currentTarget);
+    const name = (formData.get("name")?.toString() ?? "").trim();
+    const phone = (formData.get("phone")?.toString() ?? "").trim();
+    const email = (formData.get("email")?.toString() ?? "").trim();
+    const interest = (formData.get("interest")?.toString() ?? "").trim();
+    const branch = formData.get("branch")?.toString() as BranchKey | "";
+    const message = (formData.get("message")?.toString() ?? "").trim();
+
+    if (!branch) {
+      return;
+    }
+
+    const branchLabel = branchLabels[branch];
+    const details = [
+      `Hi, I want to enquire about ${branchLabel}.`,
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      email ? `Email: ${email}` : null,
+      interest ? `Interested In: ${interest}` : null,
+      message ? `Message: ${message}` : null,
+    ].filter(Boolean).join("\n");
+
+    redirectToWhatsApp(branch, details);
   };
 
   const handleWhatsAppChat = () => {
     if (!whatsappBranch) return;
 
-    const branchLabel = whatsappBranch === "kondapur" ? "CFS9 Kondapur" : "CFS9 Madhapur";
-    const message = encodeURIComponent(`Hi! I want to enquire about ${branchLabel}.`);
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
+    const branchLabel = branchLabels[whatsappBranch];
+    redirectToWhatsApp(whatsappBranch, `Hi! I want to enquire about ${branchLabel}.`);
   };
 
   return (
@@ -49,7 +85,7 @@ export default function ContactPage() {
           <div id="whatsapp-chat" className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
             <select
               value={whatsappBranch}
-              onChange={(e) => setWhatsappBranch(e.target.value as "kondapur" | "madhapur" | "")}
+              onChange={(e) => setWhatsappBranch(e.target.value as BranchKey | "")}
               className="w-full sm:w-auto min-w-[220px] px-4 py-4 bg-surface border border-white/20 rounded-lg text-white focus:outline-none focus:border-accent transition-colors"
               aria-label="Select WhatsApp branch"
             >
@@ -80,24 +116,7 @@ export default function ContactPage() {
                 Send Us a <span className="text-accent">Message</span>
               </h2>
 
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-accent/10 border border-accent/30 rounded-lg p-8 text-center"
-                >
-                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Send className="w-8 h-8 text-accent" />
-                  </div>
-                  <h3 className="font-heading text-xl font-bold uppercase mb-2">
-                    Message Sent!
-                  </h3>
-                  <p className="text-muted">
-                    Thanks for reaching out. Our team will get back to you within 24 hours.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -164,6 +183,7 @@ export default function ContactPage() {
                     <select
                       id="branch"
                       name="branch"
+                      required
                       className="w-full px-4 py-3 bg-surface border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent transition-colors"
                     >
                       <option value="">Select a branch</option>
@@ -188,10 +208,9 @@ export default function ContactPage() {
                     className="w-full sm:w-auto bg-accent hover:bg-accent-hover text-white font-heading font-bold uppercase tracking-wider px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
-                    Send Message
+                    Send On WhatsApp
                   </button>
                 </form>
-              )}
             </div>
 
             {/* Info */}
@@ -214,8 +233,8 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                    <a href="tel:+919000190009" className="hover:text-accent transition-colors">
-                      +91 90001 90009
+                    <a href="tel:+918886564999" className="hover:text-accent transition-colors">
+                      +91 88865 64999
                     </a>
                   </div>
                   <div className="flex items-start gap-3">
@@ -237,8 +256,8 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                    <a href="tel:+919000290009" className="hover:text-accent transition-colors">
-                      +91 90002 90009
+                    <a href="tel:+919052288888" className="hover:text-accent transition-colors">
+                      +91 90522 88888
                     </a>
                   </div>
                   <div className="flex items-start gap-3">

@@ -71,7 +71,7 @@ export default function RootLayout({
               name: "CFS9 — Central Fitness Station",
               description: "Premium gym with world-class equipment and expert coaches in Hyderabad",
               url: "https://cfs9.vercel.app",
-              "telephone": "+91-90001-90009",
+              "telephone": "+91-88865-64999",
               address: [
                 {
                   "@type": "PostalAddress",
