@@ -174,8 +174,8 @@ export default function Footer() {
               Terms of Service
             </Link>
           </div>
-          <p className="text-muted text-xs text-center sm:text-right">
-            Made by <span className="text-primary font-medium">Proxy Media</span>
+          <p className="text-xs text-muted/90 text-center sm:text-right">
+            Designed by <span className="text-primary font-semibold tracking-wide">Proxy Media</span>
           </p>
         </div>
       </div>
