@@ -5,32 +5,32 @@ const programs = [
   {
     title: "Strength Training",
     description: "Build raw power with progressive overload, compound lifts, and periodized programs designed for maximum strength gains.",
-    image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80",
+    image: "/stock/1581009146145-b5ef050c2e1e.jpg",
   },
   {
     title: "Bodybuilding",
     description: "Sculpt the perfect physique with hypertrophy-focused training, isolation work, and competition-level coaching.",
-    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80",
+    image: "/stock/1583454110551-21f2fa2afe61.jpg",
   },
   {
     title: "CrossFit",
     description: "High-intensity functional fitness combining weightlifting, cardio, and gymnastics for total athletic performance.",
-    image: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600&q=80",
+    image: "/stock/1534258936925-c58bed479fcb.jpg",
   },
   {
     title: "Cardio & HIIT",
     description: "Torch fat and boost endurance with heart-pumping interval training, battle ropes, and conditioning circuits.",
-    image: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=600&q=80",
+    image: "/stock/1538805060514-97d9cc17730c.jpg",
   },
   {
     title: "Functional Fitness",
     description: "Move better in daily life with mobility work, core stability, and movement pattern optimization.",
-    image: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80",
+    image: "/stock/1549060279-7e168fcee0c2.jpg",
   },
   {
     title: "Personal Training",
     description: "One-on-one coaching tailored to your goals, fitness level, and schedule. Your transformation starts here.",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80",
+    image: "/stock/1571019614242-c5c5dee9f50b.jpg",
   },
 ];
 

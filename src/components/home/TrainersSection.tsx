@@ -21,28 +21,28 @@ const coaches = [
     role: "Fitness Trainer",
     specialization: "Functional Training",
     experience: "4+ Years",
-    image: "https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=500&q=80",
+    image: "/stock/1583468982228-19f19164aee2.jpg",
   },
   {
     name: "Mahender",
     role: "Fitness Trainer",
     specialization: "Injury Rehab & Exercise Correction",
     experience: "4+ Years",
-    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80",
+    image: "/stock/1574680096145-d05b474e2155.jpg",
   },
   {
     name: "Ajay",
     role: "Fitness Trainer",
     specialization: "CrossFit & Sports Nutrition",
     experience: "4+ Years",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80",
+    image: "/stock/1571019614242-c5c5dee9f50b.jpg",
   },
   {
     name: "N. Surya Prakash",
     role: "Fitness Trainer",
     specialization: "Nutrition & Kettlebell Training",
     experience: "5+ Years",
-    image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80",
+    image: "/stock/1581009146145-b5ef050c2e1e.jpg",
   },
 ];
 

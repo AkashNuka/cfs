@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import StatCounter from "@/components/StatCounter";
 
@@ -14,10 +15,12 @@ export default function TransformationsSection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Background */}
-      <img
-        src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=80"
+      <Image
+        src="/stock/1526506118085-60ce8714f8c5.jpg"
         alt="Gym training"
-        className="absolute inset-0 w-full h-full object-cover opacity-10"
+        fill
+        sizes="100vw"
+        className="absolute inset-0 object-cover opacity-10"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-red-950/15" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />

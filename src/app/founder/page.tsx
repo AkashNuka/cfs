@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Trophy, Dumbbell, Users, Target, Award, Star, Sparkles } from "lucide-react";
+import { Trophy, Dumbbell, Award, Sparkles } from "lucide-react";
 import Button from "@/components/Button";
 
 const milestones = [
@@ -37,47 +37,47 @@ export default function FounderPage() {
   return (
     <main>
       {/* === Hero === */}
-      <section className="relative min-h-[82vh] overflow-hidden pt-32 md:pt-36">
+      <section className="relative min-h-[76vh] sm:min-h-[82vh] overflow-hidden pt-20 sm:pt-24 md:pt-36">
         {/* Full-screen background image */}
-        <div className="absolute inset-x-0 bottom-0 top-16 md:top-20 bg-black">
+        <div className="absolute inset-0 bg-black">
           <Image
             src="/founderbg2.jpg"
             alt="Satish Bachala — Founder of CFS9"
             fill
             priority
-            className="object-contain object-left-bottom brightness-110"
+            className="object-cover object-[38%_20%] sm:object-contain sm:object-left-bottom brightness-110"
             sizes="100vw"
           />
           {/* Gradient fade from image into text area */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/8 to-[var(--color-background)]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-[var(--color-background)] sm:from-black/0 sm:via-black/8" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-black/25 sm:from-transparent sm:via-black/5 sm:to-black/20" />
         </div>
 
         {/* Text content pinned to bottom-right */}
-        <div className="relative z-10 flex flex-col justify-end items-end min-h-[calc(82vh-6rem)] pb-8 md:pb-14">
+        <div className="relative z-10 flex flex-col justify-end items-end min-h-[calc(76vh-5rem)] sm:min-h-[calc(82vh-6rem)] pb-8 md:pb-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-end lg:pr-8 xl:pr-16">
             <motion.div
               {...fadeUp}
-              className="text-right max-w-xl bg-black/25 backdrop-blur-[2px] rounded-2xl p-6 md:p-8"
+              className="w-full max-w-md sm:max-w-xl text-right bg-black/35 sm:bg-black/25 backdrop-blur-[2px] rounded-2xl p-5 sm:p-6 md:p-8"
             >
-              <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-4">
+              <p className="text-primary font-semibold tracking-[0.14em] sm:tracking-[0.2em] uppercase text-[11px] sm:text-sm mb-3 sm:mb-4">
                 Entrepreneur | Fitness Coach | Celebrity Trainer
               </p>
               <h1
-                className="text-5xl sm:text-6xl md:text-7xl font-bold uppercase leading-tight"
+                className="text-4xl sm:text-6xl md:text-7xl font-bold uppercase leading-[0.95] sm:leading-tight"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 Satish{" "}
                 <span className="text-primary">Bachala</span>
               </h1>
-              <p className="mt-6 text-white/70 text-lg leading-relaxed ml-auto max-w-xl">
+              <p className="mt-4 sm:mt-6 text-white/75 text-base sm:text-lg leading-relaxed ml-auto max-w-xl">
                 Meet the Visionary Behind CFS
               </p>
-              <div className="mt-8 flex flex-wrap gap-4 justify-end">
-                <Button href="https://wa.me/918886564999?text=Hi%2C%20I%20need%20training%20with%20Satish." size="lg" arrow>
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 justify-end">
+                <Button href="https://wa.me/918886564999?text=Hi%2C%20I%20need%20training%20with%20Satish." size="lg" arrow className="w-full sm:w-auto">
                   Train With Satish
                 </Button>
-                <Button href="/coaching" variant="outline" size="lg">
+                <Button href="/coaching" variant="outline" size="lg" className="w-full sm:w-auto">
                   Meet the Team
                 </Button>
               </div>

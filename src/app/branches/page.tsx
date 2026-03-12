@@ -1,6 +1,6 @@
 "use client";
 
-import BranchCard from "@/components/BranchCard";
+import Image from "next/image";
 
 const branches = [
   {
@@ -8,7 +8,7 @@ const branches = [
     address: "Plot 42, Botanical Garden Road, Kondapur, Hyderabad 500084",
     phone: "+91 88865 64999",
     hours: "5:00 AM – 11:00 PM (Mon – Sat) | 6:00 AM – 10:00 AM (Sun)",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    image: "/stock/1534438327276-14e5300c3a48.jpg",
     mapUrl: "https://maps.google.com/?q=Kondapur+Hyderabad",
     features: [
       "8,000+ sq ft training area",
@@ -25,7 +25,7 @@ const branches = [
     address: "Durgam Cheruvu Road, Near Inorbit Mall, Madhapur, Hyderabad 500081",
     phone: "+91 90522 88888",
     hours: "5:00 AM – 11:00 PM (Mon – Sat) | 6:00 AM – 10:00 AM (Sun)",
-    image: "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?w=800&q=80",
+    image: "/stock/1570829460005-c840387bb1ca.jpg",
     mapUrl: "https://maps.google.com/?q=Madhapur+Hyderabad",
     features: [
       "10,000+ sq ft premium facility",
@@ -42,7 +42,7 @@ const branches = [
     address: "Jubilee Hills, Hyderabad",
     phone: "",
     hours: "",
-    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80",
+    image: "/stock/1571902943202-507ec2618e8f.jpg",
     mapUrl: "",
     features: [],
     comingSoon: true,
@@ -54,21 +54,24 @@ export default function BranchesPage() {
     <main>
       {/* Hero */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?w=1920&q=80"
+        <Image
+          src="/stock/1570829460005-c840387bb1ca.jpg"
           alt=""
+          fill
+          priority
+          sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover object-[center_7%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-12 sm:pt-20">
           <p
-            className="text-sm sm:text-base tracking-[0.3em] uppercase text-primary font-medium mb-5"
+            className="text-xs sm:text-base tracking-[0.22em] sm:tracking-[0.3em] uppercase text-primary font-medium mb-4 sm:mb-5"
             style={{ fontFamily: "var(--font-oswald)" }}
           >
             Train Near You
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold uppercase mb-4 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+          <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl leading-none font-bold uppercase mb-4 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
             Our <span className="text-accent">Branches</span>
           </h1>
           <div className="mx-auto w-28 h-1 bg-primary rounded-full mb-6" />
@@ -86,24 +89,17 @@ export default function BranchesPage() {
             <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6" style={{ fontFamily: "var(--font-oswald)" }}>
               Modern. <span className="text-primary">Equipped.</span> Welcoming.
             </h2>
-            <button 
-              onClick={() => document.querySelector('main')?.children[2]?.scrollIntoView({ behavior: 'smooth' })}
-              className="mt-3 inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-              aria-label="Scroll down"
-            >
-              <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </button>
           </div>
 
           {branches.map((branch, index) =>
             branch.comingSoon ? (
-              <div key={branch.name} className="relative rounded-xl overflow-hidden border border-accent/20">
-                <img
+              <div key={branch.name} className="relative h-[320px] rounded-xl overflow-hidden border border-accent/20">
+                <Image
                   src={branch.image}
                   alt={branch.name}
-                  className="w-full h-[320px] object-cover opacity-25"
+                  fill
+                  sizes="100vw"
+                  className="object-cover opacity-25"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 bg-background/50">
                   <span className="inline-block px-4 py-1 bg-accent text-white text-xs font-bold tracking-[0.2em] rounded-full mb-4 uppercase">
@@ -124,11 +120,13 @@ export default function BranchesPage() {
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <img
+                <div className={`relative h-[350px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <Image
                     src={branch.image}
                     alt={branch.name}
-                    className="w-full h-[350px] object-cover rounded-lg"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="rounded-lg object-cover"
                   />
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>

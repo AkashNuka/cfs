@@ -34,9 +34,10 @@ export default function IntroSection() {
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-          className="flex items-center justify-center mx-auto mb-8 w-full -mx-4 sm:-mx-6 lg:-mx-8"
-          style={{ perspective: "1200px", width: "calc(100% + 2rem)" }}
+          className="mb-8 w-full overflow-hidden"
+          style={{ perspective: "1200px" }}
         >
+          <div className="mx-auto flex w-full max-w-[820px] origin-center scale-[0.58] items-center justify-center sm:scale-[0.78] md:scale-100">
           {/* Left plates (outer to inner: small → medium → large) */}
           <div className="flex items-center flex-shrink-0">
             {/* Left Collar Knob */}
@@ -93,7 +94,7 @@ export default function IntroSection() {
           </div>
 
           {/* Bar with heading text overlay */}
-          <div className="relative flex-1 flex items-center justify-center mx-0">
+          <div className="relative mx-0 flex flex-1 items-center justify-center">
             {/* Bar background */}
             <motion.div
               className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[12px]"
@@ -132,7 +133,7 @@ export default function IntroSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="relative z-10 font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-none whitespace-nowrap py-2"
+              className="relative z-10 font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-none whitespace-nowrap py-2"
               style={{
                 textShadow: "0 0 20px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.8)",
               }}
@@ -195,6 +196,7 @@ export default function IntroSection() {
                 boxShadow: "0 3px 8px rgba(0,0,0,0.5)",
               }}
             />
+          </div>
           </div>
         </motion.div>
 

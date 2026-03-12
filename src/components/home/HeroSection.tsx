@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/Button";
-import { ChevronDown, Dumbbell } from "lucide-react";
+import { Dumbbell } from "lucide-react";
 
 /* ── Real gym photos that auto-rotate ── */
 const HERO_SLIDES = [
@@ -35,7 +35,7 @@ export default function HeroSection() {
   const slide = HERO_SLIDES[current];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* ── Background image carousel with Ken Burns zoom ── */}
       <AnimatePresence mode="popLayout">
         <motion.img
@@ -63,14 +63,14 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 z-[2]" />
 
       {/* ── Diagonal red accent stripe ── */}
-      <div className="absolute -left-20 top-0 w-[500px] h-full bg-primary/[0.04] skew-x-[-12deg] z-[3]" />
+      <div className="absolute -left-20 top-0 hidden sm:block w-[500px] h-full bg-primary/[0.04] skew-x-[-12deg] z-[3]" />
 
       {/* ── Red energy blurs ── */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/15 rounded-full blur-[120px] z-[3] animate-float" />
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-[100px] z-[3] animate-float" style={{ animationDelay: "2s" }} />
 
       {/* ── Content ── */}
-      <div className="relative z-30 max-w-6xl mx-auto px-4 sm:px-6 w-full pt-28 pb-36">
+      <div className="relative z-30 max-w-6xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-28 pb-28 sm:pb-36">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
 
           {/* Badge */}
@@ -79,9 +79,9 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
               <Dumbbell className="w-4 h-4 text-primary" />
-              <span className="text-xs tracking-[0.2em] uppercase text-primary font-medium" style={{ fontFamily: "var(--font-oswald)" }}>
+              <span className="text-[11px] sm:text-xs tracking-[0.16em] sm:tracking-[0.2em] uppercase text-primary font-medium" style={{ fontFamily: "var(--font-oswald)" }}>
                 #1 Gym in Hyderabad
               </span>
             </span>
@@ -97,7 +97,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.85] tracking-tight"
+                className="text-[2.9rem] sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.9] sm:leading-[0.85] tracking-tight"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 <span className="text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
@@ -130,10 +130,10 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="mt-6"
           >
-            <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/90 tracking-wide" style={{ fontFamily: "var(--font-oswald)" }}>
-              CFS9 <span className="text-lg sm:text-xl md:text-2xl font-light text-white/50">— Central Fitness Station</span>
+            <p className="text-xl sm:text-3xl md:text-4xl font-semibold text-white/90 tracking-wide" style={{ fontFamily: "var(--font-oswald)" }}>
+              CFS9 <span className="block sm:inline text-base sm:text-xl md:text-2xl font-light text-white/50">— Central Fitness Station</span>
             </p>
-            <p className="mt-3 text-base sm:text-lg text-gray-400 max-w-xl leading-relaxed">
+            <p className="mt-3 text-sm sm:text-lg text-gray-300 max-w-xl leading-relaxed px-2 sm:px-0">
               Premium equipment. Expert coaches. Real results.{" "}
               <span className="text-white font-medium">Elite training across Kondapur &amp; Madhapur.</span>
             </p>
@@ -144,12 +144,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.0 }}
-            className="mt-8 flex flex-col sm:flex-row items-center lg:items-start gap-4"
+            className="mt-8 flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center lg:items-start gap-3 sm:gap-4"
           >
-            <Button href="/contact#whatsapp-chat" variant="primary" size="lg" arrow className="animate-pulse-glow">
+            <Button href="/contact#whatsapp-chat" variant="primary" size="lg" arrow className="w-full sm:w-auto animate-pulse-glow">
               Start Training Today
             </Button>
-            <Button href="/programs" variant="outline" size="lg" arrow>
+            <Button href="/programs" variant="outline" size="lg" arrow className="w-full sm:w-auto">
               View Programs
             </Button>
           </motion.div>
@@ -157,7 +157,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Carousel dots ── */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-10 z-30 flex gap-2">
+      <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-10 z-30 flex gap-2">
         {HERO_SLIDES.map((_, i) => (
           <button
             key={i}
@@ -169,23 +169,6 @@ export default function HeroSection() {
           />
         ))}
       </div>
-
-      {/* ── Scroll indicator ── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1 cursor-pointer"
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-        role="button"
-        aria-label="Scroll down"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === "Enter" && window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-      >
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}>
-          <ChevronDown className="w-5 h-5 text-white/30" />
-        </motion.div>
-      </motion.div>
 
       {/* ── Bottom fade ── */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />

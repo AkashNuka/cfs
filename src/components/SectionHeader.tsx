@@ -32,7 +32,7 @@ export default function SectionHeader({
       )}
     >
       <h2
-        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-white uppercase"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.02em] sm:tracking-wider text-white uppercase"
         style={{ fontFamily: "var(--font-oswald)" }}
       >
         {title}
@@ -40,7 +40,7 @@ export default function SectionHeader({
       <div className="mt-4 mx-auto w-20 h-1 bg-primary rounded-full" />
       {subtitle && (
         <p className={clsx(
-          "mt-6 text-muted text-lg max-w-2xl",
+          "mt-5 text-muted text-base sm:text-lg max-w-2xl",
           align === "center" && "mx-auto"
         )}>
           {subtitle}

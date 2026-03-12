@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Dumbbell,
@@ -16,42 +17,42 @@ const services = [
     label: "Gym Access",
     description: "State-of-the-art equipment and premium facilities for every fitness level.",
     skills: ["Free Weights", "Machines", "Cardio Zone"],
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=800&q=85&fit=crop",
+    image: "/stock/1534438327276-14e5300c3a48.jpg",
   },
   {
     icon: User,
     label: "Personal Training",
     description: "One-on-one guidance from certified trainers to maximize your results.",
     skills: ["Custom Workouts", "Form Correction", "Goal Setting"],
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&h=800&q=85&fit=crop",
+    image: "/stock/1571019614242-c5c5dee9f50b.jpg",
   },
   {
     icon: TrendingDown,
     label: "Weight Loss Programs",
     description: "Science-backed programs designed to help you shed fat and keep it off.",
     skills: ["HIIT Training", "Calorie Planning", "Body Composition"],
-    image: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=1200&h=800&q=85&fit=crop",
+    image: "/stock/1538805060514-97d9cc17730c.jpg",
   },
   {
     icon: Zap,
     label: "Strength & Conditioning",
     description: "Build raw power and functional strength with progressive overload training.",
     skills: ["Powerlifting", "Olympic Lifts", "Core Strength"],
-    image: "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=1200&h=800&q=85&fit=crop",
+    image: "/stock/1526401485004-46910ecc8e51.jpg",
   },
   {
     icon: Shield,
     label: "Boxing & Functional Training",
     description: "High-intensity boxing workouts paired with functional movement patterns.",
     skills: ["Pad Work", "Bag Training", "Footwork"],
-    image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1200&h=800&q=85&fit=crop",
+    image: "/stock/1549719386-74dfcbf7dbed.jpg",
   },
   {
     icon: Salad,
     label: "Nutrition Guidance",
     description: "Tailored meal plans and dietary advice to fuel your transformation.",
     skills: ["Meal Plans", "Macro Tracking", "Supplements"],
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=800&q=85&fit=crop",
+    image: "/stock/1490645935967-10de6ba17061.jpg",
   },
 ];
 
@@ -98,7 +99,7 @@ export default function ServicesSection() {
 
         {/* Services — 1 per row, full width landscape cards */}
         <div className="flex flex-col gap-8">
-          {services.map(({ icon: Icon, label, description, skills, image }, i) => (
+          {services.map(({ icon: Icon, label, description, skills, image }) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, y: 60 }}
@@ -113,11 +114,12 @@ export default function ServicesSection() {
             >
               {/* Full-width landscape image */}
               <div className="relative w-full aspect-[21/9] sm:aspect-[21/8] overflow-hidden">
-                <img
+                <Image
                   src={image}
                   alt={label}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 80vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Subtle gradient overlay — only at the bottom for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent group-hover:from-black/75 group-hover:via-black/20 transition-all duration-500" />

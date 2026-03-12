@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -26,10 +26,18 @@ const allLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4">
-      <nav className="max-w-7xl mx-auto bg-black/30 backdrop-blur-[28px] backdrop-saturate-[1.6] rounded-2xl border border-white/[0.15] shadow-2xl shadow-black/50 ring-1 ring-white/[0.08]">
-        <div className="flex items-center h-12 px-5 sm:px-6">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 pt-3 sm:pt-4">
+      <nav className="max-w-7xl mx-auto bg-black/30 backdrop-blur-[28px] backdrop-saturate-[1.6] rounded-xl sm:rounded-2xl border border-white/[0.15] shadow-2xl shadow-black/50 ring-1 ring-white/[0.08]">
+        <div className="flex items-center h-14 sm:h-12 px-4 sm:px-6">
           {/* Logo — left */}
           <Link href="/" className="flex items-center shrink-0 flex-1">
             <Image
@@ -37,7 +45,7 @@ export default function Navbar() {
               alt="CFS9 — Central Fitness Station"
               width={120}
               height={68}
-              className="h-8 w-auto object-contain"
+              className="h-7 sm:h-8 w-auto object-contain"
               priority
             />
           </Link>
@@ -66,7 +74,7 @@ export default function Navbar() {
               JOIN NOW
             </Link>
             <button
-              className="lg:hidden text-white p-1.5"
+              className="lg:hidden text-white p-2 rounded-md border border-white/10 bg-white/[0.03]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -85,15 +93,15 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden mt-2 mx-auto max-w-7xl bg-black/40 backdrop-blur-[28px] backdrop-saturate-[1.6] rounded-2xl border border-white/[0.15] shadow-2xl shadow-black/50 overflow-hidden"
+            className="lg:hidden mt-2 mx-auto max-w-7xl bg-black/40 backdrop-blur-[28px] backdrop-saturate-[1.6] rounded-xl sm:rounded-2xl border border-white/[0.15] shadow-2xl shadow-black/50 overflow-hidden"
           >
-            <div className="px-6 py-5 space-y-3">
+            <div className="px-5 sm:px-6 py-5 space-y-2">
               {allLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block text-base font-medium tracking-[0.15em] text-gray-400 hover:text-white transition-colors py-2"
+                  className="block text-sm sm:text-base font-medium tracking-[0.12em] sm:tracking-[0.15em] text-gray-300 hover:text-white transition-colors py-2.5"
                   style={{ fontFamily: "var(--font-oswald)" }}
                 >
                   {link.label}

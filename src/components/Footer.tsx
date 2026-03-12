@@ -20,11 +20,11 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-10 sm:gap-12">
           {/* Brand */}
-          <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
+          <div className="sm:col-span-2 xl:col-span-1">
+            <Link href="/" className="flex items-center gap-2 mb-4 justify-center sm:justify-start">
               <Dumbbell className="w-8 h-8 text-primary" />
               <span
                 className="text-2xl font-bold tracking-wider text-white"
@@ -33,11 +33,11 @@ export default function Footer() {
                 CFS9
               </span>
             </Link>
-            <p className="text-muted text-sm leading-relaxed mb-6">
+            <p className="text-muted text-sm leading-relaxed mb-6 text-center sm:text-left max-w-sm">
               Central Fitness Station — Premium gym with world-class equipment and
               expert coaches. Transform your body, transform your life.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center sm:justify-start flex-wrap">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -162,11 +162,11 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center sm:items-start lg:items-center justify-between gap-4 text-center sm:text-left">
+          <p className="text-muted text-xs max-w-xs sm:max-w-none">
             © {new Date().getFullYear()} CFS9 — Central Fitness Station. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-muted">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-muted">
             <Link href="/contact" className="hover:text-primary transition-colors">
               Privacy Policy
             </Link>

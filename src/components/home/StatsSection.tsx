@@ -15,7 +15,7 @@ export default function StatsSection() {
     <section className="relative py-24 overflow-hidden">
       {/* Background */}
       <Image
-        src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=80"
+        src="/stock/1526506118085-60ce8714f8c5.jpg"
         alt="Gym background"
         fill
         className="object-cover opacity-15"
@@ -25,7 +25,7 @@ export default function StatsSection() {
 
       {/* Stats Grid */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
           {stats.map((stat) => (
             <StatCounter key={stat.label} {...stat} />
           ))}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import CoachCard from "@/components/CoachCard";
 import Button from "@/components/Button";
 
@@ -27,7 +28,7 @@ const coaches = [
     role: "Fitness Trainer — Level 2",
     specialization: "Functional Training",
     experience: "4+ Years",
-    image: "https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=500&q=80",
+    image: "/stock/1583468982228-19f19164aee2.jpg",
     bio: "BFY Certified Trainer and Nutrition Advisor. Mahesh focuses on functional training, injury rehab, and strength conditioning. He builds sustainable programs tailored to individual goals and special populations.",
   },
   {
@@ -35,7 +36,7 @@ const coaches = [
     role: "Fitness Trainer — Level 2",
     specialization: "Injury Rehab & Exercise Correction",
     experience: "4+ Years",
-    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80",
+    image: "/stock/1574680096145-d05b474e2155.jpg",
     bio: "BFY Certified Trainer with expertise in exercise correction, special populations, and rehabilitation. Mahender brings structured programming for clients managing diabetics, thyroid, PCOD, and obesity.",
   },
   {
@@ -43,7 +44,7 @@ const coaches = [
     role: "Fitness Trainer — Level 2",
     specialization: "CrossFit & Sports Nutrition",
     experience: "4+ Years",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80",
+    image: "/stock/1571019614242-c5c5dee9f50b.jpg",
     bio: "BFY Certified Trainer skilled in CrossFit, sports nutrition, and workload management. Ajay works extensively with clients dealing with lower back issues, injury rehab, PCOD, and obesity for long-term results.",
   },
   {
@@ -51,7 +52,7 @@ const coaches = [
     role: "Fitness Trainer — Level 2",
     specialization: "Nutrition & Kettlebell Training",
     experience: "5+ Years",
-    image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80",
+    image: "/stock/1581009146145-b5ef050c2e1e.jpg",
     bio: "ProPower Fitness Academy certified trainer, Nutrition Advisor, and Kettlebell-EKFA specialist. Surya excels in competition prep, carbs manipulation, and rehab & mobility — with a strong focus on clients managing PCOD, diabetics, thyroid, and injury recovery.",
   },
 ];
@@ -62,9 +63,12 @@ export default function CoachingPage() {
       {/* Hero */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <img
+        <Image
           src="/coaching-hero.jpg"
           alt="CFS9 Coaching Team"
+          fill
+          priority
+          sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover object-[center_7%]"
         />
 
@@ -73,18 +77,18 @@ export default function CoachingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
 
         {/* Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-12 sm:pt-20">
           <p
-            className="text-sm sm:text-base tracking-[0.3em] uppercase text-primary font-medium mb-5"
+            className="text-xs sm:text-base tracking-[0.22em] sm:tracking-[0.3em] uppercase text-primary font-medium mb-4 sm:mb-5"
             style={{ fontFamily: "var(--font-oswald)" }}
           >
             Elite Training Staff
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold uppercase mb-4 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+          <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl leading-none font-bold uppercase mb-4 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
             Our <span className="text-accent">Coaches</span>
           </h1>
           <div className="mx-auto w-28 h-1 bg-primary rounded-full mb-6" />
-          <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-200 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
             Every champion needs a great coach. Ours have the experience, certifications, and passion to get you there.
           </p>
         </div>
@@ -104,15 +108,6 @@ export default function CoachingPage() {
             <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6" style={{ fontFamily: "var(--font-oswald)" }}>
               Certified. <span className="text-primary">Experienced.</span> Dedicated.
             </h2>
-            <button 
-              onClick={() => document.getElementById('coaches-grid')?.scrollIntoView({ behavior: 'smooth' })}
-              className="mt-6 inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-              aria-label="Scroll to coaches"
-            >
-              <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="coaches-grid">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
@@ -8,37 +9,37 @@ const features = [
   {
     title: "Certified elite trainers",
     image:
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80",
+      "/stock/1571019614242-c5c5dee9f50b.jpg",
     description: "Our coaches hold internationally recognized certifications.",
   },
   {
     title: "Result-oriented training programs",
     image:
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+      "/stock/1534438327276-14e5300c3a48.jpg",
     description: "Every program is designed around measurable outcomes.",
   },
   {
     title: "Limited members for personalized attention",
     image:
-      "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80",
+      "/stock/1549060279-7e168fcee0c2.jpg",
     description: "Small batches ensure every member gets individual focus.",
   },
   {
     title: "Premium equipment and clean facilities",
     image:
-      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80",
+      "/stock/1540497077202-7c8a3999166f.jpg",
     description: "World-class machines in a spotless, motivating environment.",
   },
   {
     title: "Multiple prime locations",
     image:
-      "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?auto=format&fit=crop&w=800&q=80",
+      "/stock/1570829460005-c840387bb1ca.jpg",
     description: "Conveniently located branches across the city.",
   },
   {
     title: "Transformation-focused approach",
     image:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
+      "/stock/1517836357463-d25dfeac3438.jpg",
     description: "We measure success by the transformations we deliver.",
   },
 ];
@@ -150,7 +151,7 @@ export default function WhyChooseSection() {
       id="why-cfs9"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
           {/* ──── Left — text (slides in from the LEFT) ──── */}
           <div>
             <motion.p
@@ -158,7 +159,7 @@ export default function WhyChooseSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-4"
+              className="text-primary font-semibold tracking-[0.14em] sm:tracking-[0.2em] uppercase text-xs sm:text-sm mb-4"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               The CFS9 Difference
@@ -169,7 +170,7 @@ export default function WhyChooseSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-              className="font-heading text-4xl sm:text-5xl font-bold uppercase leading-tight mb-4"
+              className="font-heading text-3xl sm:text-5xl font-bold uppercase leading-tight mb-4"
             >
               Why Choose <span className="text-primary">CFS9</span>
             </motion.h2>
@@ -187,7 +188,7 @@ export default function WhyChooseSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-muted text-lg leading-relaxed"
+              className="text-muted text-base sm:text-lg leading-relaxed"
             >
               We don&apos;t just offer a gym — we offer a complete transformation
               experience, backed by certified coaches and a results-first
@@ -219,10 +220,12 @@ export default function WhyChooseSection() {
                   className="relative shrink-0 h-full"
                   style={{ width: `${100 / COUNT}%` }}
                 >
-                  <img
+                  <Image
                     src={f.image}
                     alt={f.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
                   />
                   {/* gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
