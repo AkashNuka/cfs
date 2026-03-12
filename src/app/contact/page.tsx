@@ -272,10 +272,10 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent" />
                   <a
-                    href="mailto:info@cfs9gym.com"
+                    href="mailto:cfs9gym@gmail.com"
                     className="font-medium hover:text-accent transition-colors"
                   >
-                    info@cfs9gym.com
+                    cfs9gym@gmail.com
                   </a>
                 </div>
               </div>

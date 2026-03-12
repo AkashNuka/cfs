@@ -122,8 +122,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:info@cfs9gym.com" className="hover:text-primary transition-colors">
-                  info@cfs9gym.com
+                <a href="mailto:cfs9gym@gmail.com" className="hover:text-primary transition-colors">
+                  cfs9gym@gmail.com
                 </a>
               </li>
             </ul>
@@ -151,8 +151,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:info@cfs9gym.com" className="hover:text-primary transition-colors">
-                  info@cfs9gym.com
+                <a href="mailto:cfs9gym@gmail.com" className="hover:text-primary transition-colors">
+                  cfs9gym@gmail.com
                 </a>
               </li>
             </ul>
