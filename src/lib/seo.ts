@@ -7,7 +7,7 @@ export const siteConfig = {
     "Premium gym in Hyderabad with expert coaches, world-class equipment, and personalized fitness programs across Kondapur and Madhapur.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://cfs9gym.com",
   locale: "en_IN",
-  defaultOgImage: "/hero-bg.jpg",
+  defaultOgImage: "/opengraph-image",
 } as const;
 
 export const shouldIndex = process.env.VERCEL_ENV !== "preview";

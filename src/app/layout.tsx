@@ -96,7 +96,7 @@ export default function RootLayout({
               "@type": "HealthClub",
               name: "CFS9 — Central Fitness Station",
               description: "Premium gym with world-class equipment and expert coaches in Hyderabad",
-              url: "https://cfs9.vercel.app",
+              url: siteConfig.url,
               "telephone": "+91-88865-64999",
               address: [
                 {
@@ -111,7 +111,7 @@ export default function RootLayout({
                   "@type": "PostalAddress",
                   streetAddress: "Madhapur Hi-Tech City Road",
                   addressLocality: "Madhapur",
-                  url: siteConfig.url,
+                  addressRegion: "Telangana",
                   postalCode: "500081",
                   addressCountry: "IN",
                 },
