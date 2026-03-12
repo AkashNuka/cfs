@@ -9,7 +9,7 @@ const branches = [
     phone: "+91 88865 64999",
     hours: "5:00 AM – 10:00 PM (Mon – Sat) | 6:00 AM – 10:00 AM (Sun)",
     image: "/stock/1534438327276-14e5300c3a48.jpg",
-    mapUrl: "https://www.google.com/maps/dir/?api=1&destination=17.469632,78.348501",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=17.469632,78.348501",
     features: [
       "8,000+ sq ft training area",
       "Dedicated CrossFit zone",
@@ -26,7 +26,7 @@ const branches = [
     phone: "+91 90522 88888",
     hours: "5:00 AM – 10:00 PM (Mon – Sat) | 6:00 AM – 10:00 AM (Sun)",
     image: "/stock/1570829460005-c840387bb1ca.jpg",
-    mapUrl: "https://www.google.com/maps/dir/?api=1&destination=17.440223,78.389892",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=17.440223,78.389892",
     features: [
       "10,000+ sq ft premium facility",
       "Functional training area",

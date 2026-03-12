@@ -13,7 +13,7 @@ const locations = [
     hours: "5:00 AM – 10:00 PM",
     comingSoon: false,
     image: "/stock/1534438327276-14e5300c3a48.jpg",
-    mapUrl: "https://www.google.com/maps/dir/?api=1&destination=17.440223,78.389892",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=17.440223,78.389892",
   },
   {
     name: "CFS9 Kondapur",
@@ -22,7 +22,7 @@ const locations = [
     hours: "5:00 AM – 10:00 PM",
     comingSoon: false,
     image: "/stock/1540497077202-7c8a3999166f.jpg",
-    mapUrl: "https://www.google.com/maps/dir/?api=1&destination=17.469632,78.348501",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=17.469632,78.348501",
   },
   {
     name: "CFS9 Jubilee Hills",
