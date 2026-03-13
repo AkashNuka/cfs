@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/coaching", label: "COACHING" },
   { href: "/founder", label: "FOUNDER" },
   { href: "/branches", label: "BRANCHES" },
+  { href: "/gallery", label: "GALLERY" },
 ];
 
 const allLinks = [
