@@ -11,6 +11,7 @@ interface CoachCardProps {
   image: string;
   index: number;
   rotateImage?: boolean;
+  imagePosition?: string;
 }
 
 export default function CoachCard({
@@ -21,6 +22,7 @@ export default function CoachCard({
   image,
   index,
   rotateImage = false,
+  imagePosition = "50% 75%",
 }: CoachCardProps) {
   return (
     <motion.div
@@ -36,8 +38,8 @@ export default function CoachCard({
           src={image}
           alt={name}
           fill
-          className="object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
-          style={{ objectPosition: "50% 30%", transform: rotateImage ? "rotate(90deg)" : "rotate(0deg)" }}
+          className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+          style={{ objectPosition: imagePosition, transform: rotateImage ? "rotate(90deg)" : "rotate(0deg)" }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />

@@ -8,6 +8,7 @@ const coaches = [
     specialization: "Strength & Conditioning",
     experience: "7+ Years",
     image: "/akshay.jpg",
+    imagePosition: "50% 30%",
   },
   {
     name: "Vidya Yates",
@@ -15,34 +16,51 @@ const coaches = [
     specialization: "Nutrition & Transformation",
     experience: "10+ Years",
     image: "/vidya-yates.jpg",
+    imagePosition: "50% 30%",
   },
   {
-    name: "Mahesh Kumar",
+    name: "L.V. Surya Prakash",
+    role: "Senior Fitness Trainer",
+    specialization: "Strength & Conditioning",
+    experience: "3+ Years",
+    image: "/trainers/LVSuryapraksah.JPG",
+    imagePosition: "50% 60%",
+  },
+  {
+    name: "Adarsh Roy",
     role: "Fitness Trainer",
     specialization: "Functional Training",
     experience: "4+ Years",
-    image: "/stock/1583468982228-19f19164aee2.jpg",
+    image: "/trainers/AdarshRoy.JPG",
+    imagePosition: "50% 60%",
   },
   {
     name: "Mahender",
     role: "Fitness Trainer",
     specialization: "Injury Rehab & Exercise Correction",
     experience: "4+ Years",
-    image: "/stock/1574680096145-d05b474e2155.jpg",
+    image: "/trainers/Mahender.JPG",
   },
   {
     name: "Ajay",
     role: "Fitness Trainer",
     specialization: "CrossFit & Sports Nutrition",
     experience: "4+ Years",
-    image: "/stock/1571019614242-c5c5dee9f50b.jpg",
+    image: "/trainers/Ajay.JPG",
   },
   {
     name: "N. Surya Prakash",
     role: "Fitness Trainer",
     specialization: "Nutrition & Kettlebell Training",
     experience: "5+ Years",
-    image: "/stock/1581009146145-b5ef050c2e1e.jpg",
+    image: "/trainers/NSuryaprakash.JPG",
+  },
+  {
+    name: "Surya Ranga",
+    role: "Fitness Trainer",
+    specialization: "Personal Training",
+    experience: "3+ Years",
+    image: "/trainers/suryaRanga.JPG",
   },
 ];
 
@@ -55,7 +73,7 @@ export default function TrainersSection() {
           subtitle="Trained, certified, and battle-tested. Our coaches have transformed hundreds of lives. Your turn."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {coaches.map((coach, index) => (
             <CoachCard key={coach.name} {...coach} index={index} />
           ))}
